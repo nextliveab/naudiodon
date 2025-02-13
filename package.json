@@ -20,10 +20,8 @@
     "url": "git+https://github.com/Streampunk/naudiodon.git"
   },
   "dependencies": {
-    "bindings": "^1.5.0"
-  },
-  "optionalDependencies": {
-    "segfault-handler": "^1.3.0"
+    "bindings": "^1.5.0",
+    "node-segfault-handler-rs": "^1.1.2"
   },
   "devDependencies": {
     "@types/node": "^16.11.7"

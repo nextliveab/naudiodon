@@ -16,10 +16,8 @@
 const { Readable, Writable, Duplex } = require('stream');
 const portAudioBindings = require("bindings")("naudiodon.node");
 
-try {
-  var SegfaultHandler = require('segfault-handler');
-  SegfaultHandler.registerHandler("crash.log");
-} catch (err) {}
+const { register } = require('node-segfault-handler-rs');
+register();
 
 exports.SampleFormatFloat32 = 1;
 exports.SampleFormat8Bit = 8;
