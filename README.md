@@ -19,7 +19,7 @@ Install [Node.js](http://nodejs.org/) for your platform and make sure that node 
 
 Naudiodon is designed to be `require`d to use from your own application to provide async processing. For example:
 
-    npm install naudiodon
+    npm install nextliveab/naudiodon2
 
 For Raspberry Pi users, please note that this library is not intended for use with the internal sound card. Please use an external USB sound card or GPIO breakout board such as the [_Pi-DAC+ Full-HD Audio Card_](https://www.modmypi.com/raspberry-pi/breakout-boards/iqaudio/pi-dac-plus-full-hd-audio-card/?tag=pi-dac).
 
@@ -30,7 +30,7 @@ For Raspberry Pi users, please note that this library is not intended for use wi
 To get list of supported devices, call the `getDevices()` function.
 
 ```javascript
-var portAudio = require('naudiodon');
+var portAudio = require('naudiodon2');
 
 console.log(portAudio.getDevices());
 ```
@@ -77,7 +77,7 @@ Note that the device `id` parameter index value can be used as to specify which 
 To get list of host APIs, call the `getHostAPIs()` function.
 
 ```javascript
-var portAudio = require('naudiodon');
+var portAudio = require('naudiodon2');
 
 console.log(portAudio.getHostAPIs());
 ```
@@ -101,7 +101,7 @@ Playing audio involves streaming audio data to a new instance of `AudioIO` confi
 
 ```javascript
 const fs = require('fs');
-const portAudio = require('naudiodon');
+const portAudio = require('naudiodon2');
 
 // Create an instance of AudioIO with outOptions (defaults are as below), which will return a WritableStream
 var ao = new portAudio.AudioIO({
@@ -217,10 +217,10 @@ Optimisation is still required for use with lower specification devices, such as
 
 Although the architecture of naudiodon is such that it could be used at scale in production environments, development is not yet complete. In its current state, it is recommended that this software is used in development environments and for building prototypes. Future development will make this more appropriate for production use.
 
-Contributions can be made via pull requests and will be considered by the author on their merits. Enhancement requests and bug reports should be raised as github issues. For support, please contact [Streampunk Media](http://www.streampunk.media/).
+Contributions can be made via pull requests and will be considered by the author on their merits. Enhancement requests and bug reports should be raised as github issues. No support is currently offered.
 
 ## License
 
-This software is released under the Apache 2.0 license. Copyright 2017 Streampunk Media Ltd.
+This code is released under the Apache 2.0 license. Copyright of the original naudiodon code: 2017 Streampunk Media Ltd.
 
-This software uses libraries from the PortAudio project. The [license terms for PortAudio](http://portaudio.com/license.html) are stated to be an [MIT license](http://opensource.org/licenses/mit-license.php). Streampunk Media are grateful to Ross Bencina and Phil Burk for their excellent library.
+This software uses libraries from the PortAudio project. The [license terms for PortAudio](http://portaudio.com/license.html) are stated to be an [MIT license](http://opensource.org/licenses/mit-license.php).
