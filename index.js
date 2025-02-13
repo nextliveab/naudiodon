@@ -16,8 +16,12 @@
 const { Readable, Writable, Duplex } = require('stream');
 const portAudioBindings = require("bindings")("naudiodon.node");
 
-var SegfaultHandler = require('segfault-handler');
-SegfaultHandler.registerHandler("crash.log");
+try {
+  var SegfaultHandler = require('segfault-handler');
+  SegfaultHandler.registerHandler("crash.log");
+} catch (err) {
+  console.warn('Warning: segfault-handler not available - crash logs will not be generated');
+}
 
 exports.SampleFormatFloat32 = 1;
 exports.SampleFormat8Bit = 8;
