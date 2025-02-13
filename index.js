@@ -19,9 +19,7 @@ const portAudioBindings = require("bindings")("naudiodon.node");
 try {
   var SegfaultHandler = require('segfault-handler');
   SegfaultHandler.registerHandler("crash.log");
-} catch (err) {
-  console.warn('Warning: segfault-handler not available - crash logs will not be generated');
-}
+} catch (err) {}
 
 exports.SampleFormatFloat32 = 1;
 exports.SampleFormat8Bit = 8;
