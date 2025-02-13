@@ -1,16 +1,15 @@
-# Naudiodon
+# NOTE:
+
+This is a fork of [naudiodon](https://github.com/Streampunk/naudiodon), which itself is a fork of [node-portaudio](https://github.com/joeferner/node-portaudio).
+
+The goal of **naudiodon2** is to remain updated and functional, without introducing new features. The documentation has not been updated, so you will need to refer to this repository directly.
+
+#### Changes from naudiodon:
+- Added support for Apple Silicon.
+
+# Naudiodon2
 
 A [Node.js](http://nodejs.org/) [addon](http://nodejs.org/api/addons.html) that provides a wrapper around the [PortAudio](http://portaudio.com/) library, enabling an application to record and play audio with cross platform support. With this library, you can create [node.js streams](https://nodejs.org/dist/latest-v6.x/docs/api/stream.html) that can be piped to or from other streams, such as files and network connections. This library supports back-pressure.
-
-This is a fork of [node-portaudio](/joeferner/node-portaudio), refactored by:
-
-* changing from an event model to a stream model;
-* using the new API for building native Addons [N-API](https://nodejs.org/dist/latest-v8.x/docs/api/n-api.html#n_api_n_api) to enable portability between node versions without recompiling.
-* adding in local copies of libraries so that portaudio does not have to be installed preemptively.
-
-Little of the original remains but I am very grateful for Joe Ferner for the inspiration and framework to get started.
-
-This library has been tested on MacOS X 10.11, Windows 10, Linux Ubuntu Trusty and Raspbian Jessie (`armhf` architecture).
 
 Note: This is a server side library. It is not intended as a means to play and record audio via a browser.
 
