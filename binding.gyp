@@ -10,11 +10,11 @@
                 "src/AudioIO.cc",
                 "src/PaContext.cc",
             ],
-            "include_dirs": ["portaudio/include"],
             "conditions": [
                 [
                     'OS=="mac"',
                     {
+                        "include_dirs": ["portaudio/include", "<!(xcrun --show-sdk-path)/usr/include/c++/v1"],
                         "conditions": [
                             [
                                 'target_arch=="arm64"',
@@ -22,13 +22,8 @@
                                     "xcode_settings": {
                                         "GCC_ENABLE_CPP_RTTI": "YES",
                                         "MACOSX_DEPLOYMENT_TARGET": "10.7",
-                                        "SDKROOT": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
-                                        "OTHER_CPLUSPLUSFLAGS": [
-                                            "-std=c++11",
-                                            "-stdlib=libc++",
-                                            "-fexceptions",
-                                            "-isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1",
-                                        ],
+                                        "SDKROOT": "<!(xcrun --show-sdk-path)",
+                                        "OTHER_CPLUSPLUSFLAGS": ["-std=c++11", "-stdlib=libc++", "-fexceptions"],
                                     },
                                     "link_settings": {"libraries": ["-Wl,-rpath,@loader_path"]},
                                     "libraries": ["libportaudio.dylib"],
@@ -55,7 +50,7 @@
                                     ],
                                 },
                             ]
-                        ]
+                        ],
                     },
                 ],
                 [
